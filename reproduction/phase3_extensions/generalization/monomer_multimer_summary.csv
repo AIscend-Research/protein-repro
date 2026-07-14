@@ -1,0 +1,5 @@
+model,monomer_or_multimer,n_proteins,mean_seq_recovery
+fullbackbone,monomer,27,0.4719898148148144
+fullbackbone,multimer,3,0.3889875000000001
+ca_only,monomer,27,0.41844074074074084
+ca_only,multimer,3,0.35930833333333334

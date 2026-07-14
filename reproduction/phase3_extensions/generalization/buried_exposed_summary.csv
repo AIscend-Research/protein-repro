@@ -1,0 +1,5 @@
+model,burial_class,n_positions,mean_recovery
+fullbackbone,buried,341,0.4222873900293255
+fullbackbone,exposed,333,0.3333333333333333
+ca_only,buried,341,0.39882697947214074
+ca_only,exposed,333,0.30930930930930933
