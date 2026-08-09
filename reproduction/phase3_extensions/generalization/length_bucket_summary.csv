@@ -1,0 +1,7 @@
+model,length_bucket,n_proteins,mean_seq_recovery
+fullbackbone,short (<70),11,0.4681363636363638
+fullbackbone,medium (70-150),12,0.49007812500000014
+fullbackbone,long (>150),7,0.4114642857142856
+ca_only,short (<70),11,0.4151534090909092
+ca_only,medium (70-150),12,0.41895833333333315
+ca_only,long (>150),7,0.3973767857142857

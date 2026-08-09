@@ -1,0 +1,31 @@
+pdb_id,chain_ids,num_protein_chains,num_chains_official_parser,total_resolved_residues,num_missing_residues_remark465,num_internal_gaps_official_parser,has_altloc,resolution_A,num_nmr_models,monomer_or_multimer,parses_official_pipeline,runs_inference_no_error,subset,notes
+1AKI,A,1,1,129,0,0,False,1.5,0,monomer,True,True,clean,
+1BPI,A,1,1,58,0,0,True,1.09,0,monomer,True,True,clean,has alternate-location (altloc) atoms
+1CRN,A,1,1,46,0,0,False,1.5,0,monomer,True,True,clean,
+1CSP,A,1,1,67,0,0,False,2.45,0,monomer,True,True,clean,
+1ENH,A,1,1,54,0,0,False,2.1,0,monomer,True,True,clean,
+1FKB,A,1,1,107,0,0,True,1.7,0,monomer,True,True,clean,has alternate-location (altloc) atoms
+1HEL,A,1,1,129,0,0,False,1.7,0,monomer,True,True,clean,
+1IGD,A,1,1,61,0,0,False,1.1,0,monomer,True,True,clean,
+1LZ1,A,1,1,130,0,0,False,1.5,0,monomer,True,True,clean,
+1MBN,A,1,1,153,0,0,False,2.0,0,monomer,True,True,clean,
+1PIN,A,1,1,153,10,5,False,1.35,0,monomer,True,True,stress_test,
+1R69,A,1,1,63,6,0,False,2.0,0,monomer,True,True,stress_test,
+1RIS,A,1,1,97,4,0,False,2.0,0,monomer,True,True,stress_test,
+1SHG,A,1,1,57,5,0,False,1.8,0,monomer,True,True,stress_test,
+1STN,A,1,1,136,13,0,False,1.7,0,monomer,True,True,stress_test,
+1TIM,"A,B",2,2,494,0,2,False,2.5,0,multimer,True,True,stress_test,"2 internal residue gaps (1 per chain, res. 3) not reported in REMARK 465 -- caught via official parser's '-' gap placeholder, not REMARK 465 (file has none); legacy 1981 deposition"
+1TUP,"A,B,C",3,5,585,72,42,False,2.2,0,multimer,True,True,stress_test,"chains E,F are DNA (21 nt each); must restrict design to chains A,B,C"
+1UBI,A,1,1,76,0,0,False,1.8,0,monomer,True,True,clean,
+1UBQ,A,1,1,76,0,0,False,1.8,0,monomer,True,True,clean,
+1VII,A,1,1,36,0,0,False,,0,monomer,True,True,clean,
+2ACY,A,1,1,98,0,0,False,1.8,0,monomer,True,True,clean,
+2CI2,I,1,1,65,18,0,False,2.0,0,monomer,True,True,stress_test,
+2CRO,A,1,1,65,6,0,False,2.35,0,monomer,True,True,stress_test,
+2GB1,A,1,1,56,0,0,False,,0,monomer,True,True,clean,
+2LZM,A,1,1,164,0,0,False,1.7,0,monomer,True,True,clean,
+2PCY,A,1,1,99,0,0,False,1.8,0,monomer,True,True,clean,
+2PTL,A,1,1,78,0,0,False,,21,monomer,True,True,clean,
+3CHY,A,1,1,128,0,0,True,1.66,0,monomer,True,True,clean,has alternate-location (altloc) atoms
+3PGK,A,1,1,415,0,0,False,2.5,0,monomer,True,True,clean,
+4HHB,"A,B,C,D",4,4,574,0,0,False,1.74,0,multimer,True,True,clean,

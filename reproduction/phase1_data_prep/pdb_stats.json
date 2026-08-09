@@ -1,0 +1,590 @@
+[
+  {
+    "pdb_id": "1AKI",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 129
+    },
+    "chain_seqs": {
+      "A": "KVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNLCNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL"
+    },
+    "total_resolved_residues": 129,
+    "num_missing_residues": 0,
+    "resolution": 1.5,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1BPI",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 58
+    },
+    "chain_seqs": {
+      "A": "RPDFCLEPPYTGPCKARIIRYFYNAKAGLCQTFVYGGCRAKRNNFKSAEDCMRTCGGA"
+    },
+    "total_resolved_residues": 58,
+    "num_missing_residues": 0,
+    "resolution": 1.09,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1CRN",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 46
+    },
+    "chain_seqs": {
+      "A": "TTCCPSIVARSNFNVCRLPGTPEAICATYTGCIIIPGATCPGDYAN"
+    },
+    "total_resolved_residues": 46,
+    "num_missing_residues": 0,
+    "resolution": 1.5,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1CSP",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 67
+    },
+    "chain_seqs": {
+      "A": "MLEGKVKWFNSEKGFGFIEVEGQDDVFVHFSAIQGEGFKTLEEGQAVSFEIVEGNRGPQAANVTKEA"
+    },
+    "total_resolved_residues": 67,
+    "num_missing_residues": 0,
+    "resolution": 2.45,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1ENH",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 54
+    },
+    "chain_seqs": {
+      "A": "RPRTAFSSEQLARLKREFNENRYLTERRRQQLSSELGLNEAQIKIWFQNKRAKI"
+    },
+    "total_resolved_residues": 54,
+    "num_missing_residues": 0,
+    "resolution": 2.1,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1FKB",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 107
+    },
+    "chain_seqs": {
+      "A": "GVQVETISPGDGRTFPKRGQTCVVHYTGMLEDGKKFDSSRDRNKPFKFMLGKQEVIRGWEEGVAQMSVGQRAKLTISPDYAYGATGHPGIIPPHATLVFDVELLKLE"
+    },
+    "total_resolved_residues": 107,
+    "num_missing_residues": 0,
+    "resolution": 1.7,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1HEL",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 129
+    },
+    "chain_seqs": {
+      "A": "KVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNLCNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL"
+    },
+    "total_resolved_residues": 129,
+    "num_missing_residues": 0,
+    "resolution": 1.7,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1IGD",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 61
+    },
+    "chain_seqs": {
+      "A": "MTPAVTTYKLVINGKTLKGETTTKAVDAETAEKAFKQYANDNGVDGVWTYDDATKTFTVTE"
+    },
+    "total_resolved_residues": 61,
+    "num_missing_residues": 0,
+    "resolution": 1.1,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1LZ1",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 130
+    },
+    "chain_seqs": {
+      "A": "KVFERCELARTLKRLGMDGYRGISLANWMCLAKWESGYNTRATNYNAGDRSTDYGIFQINSRYWCNDGKTPGAVNACHLSCSALLQDNIADAVACAKRVVRDPQGIRAWVAWRNRCQNRDVRQYVQGCGV"
+    },
+    "total_resolved_residues": 130,
+    "num_missing_residues": 0,
+    "resolution": 1.5,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1MBN",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 153
+    },
+    "chain_seqs": {
+      "A": "VLSEGEWQLVLHVWAKVEADVAGHGQDILIRLFKSHPETLEKFDRFKHLKTEAEMKASEDLKKHGVTVLTALGAILKKKGHHEAELKPLAQSHATKHKIPIKYLEFISEAIIHVLHSRHPGDFGADAQGAMNKALELFRKDIAAKYKELGYQG"
+    },
+    "total_resolved_residues": 153,
+    "num_missing_residues": 0,
+    "resolution": 2.0,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1PIN",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 153
+    },
+    "chain_seqs": {
+      "A": "KLPPGWEKRMSRSSGRVYYFNHITNASQWERPSGGKNGQGEPARVRCSHLLVKHSQSRRPSSWRQEKITRTKEEALELINGYIQKIKSGEEDFESLASQFSDCSSAKARGDLGAFSRGQMQKPFEDASFALRTGEMSGPVFTDSGIHIILRTE"
+    },
+    "total_resolved_residues": 153,
+    "num_missing_residues": 10,
+    "resolution": 1.35,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1R69",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 63
+    },
+    "chain_seqs": {
+      "A": "SISSRVKSKRIQLGLNQAELAQKVGTTQQSIEQLENGKTKRPRFLPELASALGVSVDWLLNGT"
+    },
+    "total_resolved_residues": 63,
+    "num_missing_residues": 6,
+    "resolution": 2.0,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1RIS",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 97
+    },
+    "chain_seqs": {
+      "A": "MRRYEVNIVLNPNLDQSQLALEKEIIQRALENYGARVEKVEELGLRRLAYPIAKDPQGYFLWYQVEMPEDRVNDLARELRIRDNVRRVMVVKSQEPF"
+    },
+    "total_resolved_residues": 97,
+    "num_missing_residues": 4,
+    "resolution": 2.0,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1SHG",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 57
+    },
+    "chain_seqs": {
+      "A": "KELVLALYDYQEKSPREVTMKKGDILTLLNSTNKDWWKVEVNDRQGFVPAAYVKKLD"
+    },
+    "total_resolved_residues": 57,
+    "num_missing_residues": 5,
+    "resolution": 1.8,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1STN",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 136
+    },
+    "chain_seqs": {
+      "A": "KLHKEPATLIKAIDGDTVKLMYKGQPMTFRLLLVDTPETKHPKKGVEKYGPEASAFTKKMVENAKKIEVEFDKGQRTDKYGRGLAYIYADGKMVNEALVRQGLAKVAYVYKPNNTHEQHLRKSEAQAKKEKLNIWS"
+    },
+    "total_resolved_residues": 136,
+    "num_missing_residues": 13,
+    "resolution": 1.7,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1TIM",
+    "num_chains": 2,
+    "chain_ids": [
+      "A",
+      "B"
+    ],
+    "chain_lengths": {
+      "A": 247,
+      "B": 247
+    },
+    "chain_seqs": {
+      "A": "APRKFFVGGNWKMNGKRKSLGELIHTLDGAKLSADTEVVCGAPSIYLDFARQKLDAKIGVAAQNCYKVPKGAFTGEISPAMIKDIGAAWVILGHSERRHVFGESDELIGQKVAHALAEGLGVIACIGEKLDEREAGITEKVVFQETKAIADNVKDWSKVVLAYEPVWAIGTGKTATPQQAQEVHEKLRGWLKTHVSDAVAVQSRIIYGGSVTGGNCKELASQHDVDGFLVGGASLKPEFVDIINAKH",
+      "B": "APRKFFVGGNWKMNGKRKSLGELIHTLDGAKLSADTEVVCGAPSIYLDFARQKLDAKIGVAAQNCYKVPKGAFTGEISPAMIKDIGAAWVILGHSERRHVFGESDELIGQKVAHALAEGLGVIACIGEKLDEREAGITEKVVFQETKAIADNVKDWSKVVLAYEPVWAIGTGKTATPQQAQEVHEKLRGWLKTHVSDAVAVQSRIIYGGSVTGGNCKELASQHDVDGFLVGGASLKPEFVDIINAKH"
+    },
+    "total_resolved_residues": 494,
+    "num_missing_residues": 0,
+    "resolution": 2.5,
+    "num_nmr_models": 0,
+    "is_multimer": true,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1TUP",
+    "num_chains": 3,
+    "chain_ids": [
+      "A",
+      "B",
+      "C"
+    ],
+    "chain_lengths": {
+      "A": 196,
+      "B": 194,
+      "C": 195
+    },
+    "chain_seqs": {
+      "A": "SSSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENL",
+      "B": "SVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENL",
+      "C": "SSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENL"
+    },
+    "total_resolved_residues": 585,
+    "num_missing_residues": 72,
+    "resolution": 2.2,
+    "num_nmr_models": 0,
+    "is_multimer": true,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1UBI",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 76
+    },
+    "chain_seqs": {
+      "A": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG"
+    },
+    "total_resolved_residues": 76,
+    "num_missing_residues": 0,
+    "resolution": 1.8,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1UBQ",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 76
+    },
+    "chain_seqs": {
+      "A": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG"
+    },
+    "total_resolved_residues": 76,
+    "num_missing_residues": 0,
+    "resolution": 1.8,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "1VII",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 36
+    },
+    "chain_seqs": {
+      "A": "MLSDEDFKAVFGMTRSAFANLPLWKQQNLKKEKGLF"
+    },
+    "total_resolved_residues": 36,
+    "num_missing_residues": 0,
+    "resolution": null,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "2ACY",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 98
+    },
+    "chain_seqs": {
+      "A": "AEGDTLISVDYEIFGKVQGVFFRKYTQAEGKKLGLVGWVQNTDQGTVQGQLQGPASKVRHMQEWLETKGSPKSHIDRASFHNEKVIVKLDYTDFQIVK"
+    },
+    "total_resolved_residues": 98,
+    "num_missing_residues": 0,
+    "resolution": 1.8,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "2CI2",
+    "num_chains": 1,
+    "chain_ids": [
+      "I"
+    ],
+    "chain_lengths": {
+      "I": 65
+    },
+    "chain_seqs": {
+      "I": "NLKTEWPELVGKSVEEAKKVILQDKPEAQIIVLPVGTIVTMEYRIDRVRLFVDKLDNIAEVPRVG"
+    },
+    "total_resolved_residues": 65,
+    "num_missing_residues": 18,
+    "resolution": 2.0,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "2CRO",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 65
+    },
+    "chain_seqs": {
+      "A": "MQTLSERLKKRRIALKMTQTELATKAGVKQQSIQLIEAGVTKRPRFLFEIAMALNCDPVWLQYGT"
+    },
+    "total_resolved_residues": 65,
+    "num_missing_residues": 6,
+    "resolution": 2.35,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "2GB1",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 56
+    },
+    "chain_seqs": {
+      "A": "MTYKLILNGKTLKGETTTEAVDAATAEKVFKQYANDNGVDGEWTYDDATKTFTVTE"
+    },
+    "total_resolved_residues": 56,
+    "num_missing_residues": 0,
+    "resolution": null,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "2LZM",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 164
+    },
+    "chain_seqs": {
+      "A": "MNIFEMLRIDEGLRLKIYKDTEGYYTIGIGHLLTKSPSLNAAKSELDKAIGRNCNGVITKDEAEKLFNQDVDAAVRGILRNAKLKPVYDSLDAVRRCALINMVFQMGETGVAGFTNSLRMLQQKRWDEAAVNLAKSRWYNQTPNRAKRVITTFRTGTWDAYKNL"
+    },
+    "total_resolved_residues": 164,
+    "num_missing_residues": 0,
+    "resolution": 1.7,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "2PCY",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 99
+    },
+    "chain_seqs": {
+      "A": "IDVLLGADDGSLAFVPSEFSISPGEKIVFKNNAGFPHNIVFDEDSIPSGVDASKISMSEEDLLNAKGETFEVALSNKGEYSFYCSPHQGAGMVGKVTVN"
+    },
+    "total_resolved_residues": 99,
+    "num_missing_residues": 0,
+    "resolution": 1.8,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "2PTL",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 78
+    },
+    "chain_seqs": {
+      "A": "ENKEETPETPETDSEEEVTIKANLIFANGSTQTAEFKGTFEKATSEAYAYADTLKKDNGEYTVDVADKGYTLNIKFAG"
+    },
+    "total_resolved_residues": 78,
+    "num_missing_residues": 0,
+    "resolution": null,
+    "num_nmr_models": 21,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "3CHY",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 128
+    },
+    "chain_seqs": {
+      "A": "ADKELKFLVVDDFSTMRRIVRNLLKELGFNNVEEAEDGVDALNKLQAGGYGFVISDWNMPNMDGLELLKTIRADGAMSALPVLMVTAEAKKENIIAAAQAGASGYVVKPFTAATLEEKLNKIFEKLGM"
+    },
+    "total_resolved_residues": 128,
+    "num_missing_residues": 0,
+    "resolution": 1.66,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "3PGK",
+    "num_chains": 1,
+    "chain_ids": [
+      "A"
+    ],
+    "chain_lengths": {
+      "A": 415
+    },
+    "chain_seqs": {
+      "A": "SLSSKLSVQDLDLKDKRVFIRVDFNVPLDGKKITSNQRIVAALPTIKYVLEHHPRYVVLASHLGRPNGERNEKYSLAPVAKELQSLLGKDVTFLNDCVGPEVEAAVKASAPGSVILLENLRYHIEEEGSRKVDGQKVKASKEDVQKFRHELSSLADVYINDAFGTAHRAHSSMVGFDLPQRAAGFLLEKELKYFGKALENPTRPFLAILGGAKVADKIQLIDNLLDKVDSIIIGGGMAFTFKKVLENTEIGDSIFDKAVGPEIAKLMEKAKAKGVEVVLPVDFIIADAFSASANTKTVTDKEGIPAGWQGLDNGPESRKLFAATVAKATVILWNGPPGVFEFEKFAAGTKALLDEVVKSSAAGNTVIIGGGDTATVAKKYGVTDKISHVSTGGGASLELLEGKELPGVAFLSEKK"
+    },
+    "total_resolved_residues": 415,
+    "num_missing_residues": 0,
+    "resolution": 2.5,
+    "num_nmr_models": 0,
+    "is_multimer": false,
+    "parse_error": null
+  },
+  {
+    "pdb_id": "4HHB",
+    "num_chains": 4,
+    "chain_ids": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "chain_lengths": {
+      "A": 141,
+      "B": 146,
+      "C": 141,
+      "D": 146
+    },
+    "chain_seqs": {
+      "A": "VLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFKLLSHCLLVTLAAHLPAEFTPAVHASLDKFLASVSTVLTSKYR",
+      "B": "VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH",
+      "C": "VLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTKTYFPHFDLSHGSAQVKGHGKKVADALTNAVAHVDDMPNALSALSDLHAHKLRVDPVNFKLLSHCLLVTLAAHLPAEFTPAVHASLDKFLASVSTVLTSKYR",
+      "D": "VHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH"
+    },
+    "total_resolved_residues": 574,
+    "num_missing_residues": 0,
+    "resolution": 1.74,
+    "num_nmr_models": 0,
+    "is_multimer": true,
+    "parse_error": null
+  }
+]
