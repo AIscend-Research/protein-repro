@@ -73,6 +73,37 @@ clean/stress-test subset) in `reproduction/phase1_data_prep/dataset_summary.csv`
 | CPU-only runtime | ~150-165 sequences/min (Apple M3, 8 cores) |
 | ESMFold validation (5 designs, via Kaggle) | 3/5 fold with high confidence & low RMSD (≤1.0 Å) to native despite 22-59% sequence recovery |
 
+## Reproducing from scratch
+Every phase is driven by a committed script; `reproduction/run_all.sh` runs them
+in dependency order from a clean checkout (~30-45 min, CPU):
+
+```
+bash reproduction/run_all.sh              # phases 0-3 + paper tables
+bash reproduction/run_all.sh 2 3 tables   # only the named phases
+```
+
+Per-phase entry points, if run individually:
+
+| step | script |
+|---|---|
+| Phase 0 smoke test | commands in `phase0_smoke_test/README.md` |
+| Phase 1 data prep | `phase1_data_prep/analyze_pdbs.py`, `build_summary.py`, `verify_formatting.py` |
+| Phase 2 inference | commands in `phase2_reproduction/README.md`, then `compute_metrics.py`, `completeness_comparison.py`, `make_plots.py` |
+| Phase 2 memory | `phase2_reproduction/memory_check/run_memory_check.sh` |
+| Phase 3 noise | `phase3_extensions/noise_sweep/run_sweep.sh` → `analyze_noise_sweep.py` |
+| Phase 3 masking | `phase3_extensions/masking/make_masked_jsonl.py` → `run_masking.sh` → `analyze_masking.py` |
+| Phase 3 low-resource | `phase3_extensions/low_resource/run_low_resource.sh` → `analyze_low_resource.py` |
+| Phase 3 generalization | `phase3_extensions/generalization/{length_multimer,buried_exposed}_analysis.py` |
+| Phase 3 failure cases | `phase3_extensions/failure_cases/run_failure_cases.sh` → `analyze_failure_cases.py` |
+| Phase 3 visualization | `phase3_extensions/visualizations/recovery_heatmap.py` |
+| ESMFold validation | `phase3_extensions/kaggle_esmfold/esmfold_validation.ipynb` (GPU/Kaggle, not in `run_all.sh`) |
+| Paper tables | `reproduction/make_paper_tables.py` → `reproduction/paper_tables.md` |
+
+`make_paper_tables.py` regenerates every table in the write-up directly from the
+result CSVs, so no number in the paper is transcribed by hand; each table names
+its source CSV. Run logs (`reproduction/**/*.log`) are kept in version control —
+the runtime and memory tables are parsed out of them.
+
 ## Known limitations
 - Small (30-structure, 28-unique-sequence) hand-curated test set, not the
   paper's held-out CATH-clustered test split (not separately downloadable —

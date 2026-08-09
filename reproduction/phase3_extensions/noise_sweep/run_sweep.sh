@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-cd /Users/christopherhuang/Documents/GitHub/ProteinMPNN
+cd "$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
 PYBIN=$(conda run -n proteinmpnn which python)
 NOISE_LEVELS="0.0 0.1 0.2 0.3 0.5"
 

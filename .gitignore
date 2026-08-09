@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Reproduction run logs are evidence, not noise — the Phase 2/3 analysis
+# scripts parse them, so keep them under version control.
+!reproduction/**/*.log
