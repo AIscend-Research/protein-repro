@@ -1,66 +1,99 @@
 # To be filled by the author(s) at the time of submission
 # -------------------------------------------------------
 
+# Title of the article:
+#  - For a successful replication, it should be prefixed with "[Re]"
+#  - For a failed replication, it should be prefixed with "[¬Re]"
+#  - For other article types, no instruction (but please, not too long)
 title: "[Re] Robust deep learning-based protein sequence design using ProteinMPNN"
 
-# List of authors
+# List of authors with name, orcid number, email and affiliation
+# Affiliation "*" means contact author (required even for single-authored papers)
+# To include author suffix format name as Last Suffix, First M.I. (e.g. Schackart III, Kenneth E.)
 authors:
   - name: Christopher Huang
     orcid: 0009-0004-3034-9235
     email:
-    affiliations: 1,*
+    affiliations: 1
 
   - name: Wenhao Lu
     orcid: 0009-0001-6517-8745
-    email:
-    affiliations: 2
+    email: wenhao@nxthorizon.org
+    affiliations: 2,*      # * is for contact author
 
-# Affiliations
+# List of affiliations with code (corresponding to author affiliations), name
+# and address. You can also use these affiliations to add text such as "Equal
+# contributions" as name (with no address).
 affiliations:
-  - code: 1
-    name: Heritage High School
+  - code:    1
+    name:    Heritage High School
     address: Brentwood, CA, USA
 
-  - code: 2
-    name: Millburn High School
+  - code:    2
+    name:    Millburn High School
     address: Millburn, NJ, USA
 
-# Keywords
-keywords:
-  - ProteinMPNN
-  - Protein Design
-  - Inverse Folding
-  - Sequence Recovery
-  - Reproducibility
-  - Graph Neural Network
-  - Robustness
-  - Low-Resource Inference
-  - Silent Failure Modes
-  - ESMFold
 
-# Code
+# List of keywords (adding the programming language might be a good idea)
+keywords: ProteinMPNN, protein design, inverse folding, sequence recovery, reproducibility, graph neural network, robustness, low-resource inference, ESMFold, python
+
+# Code URL and DOI/SWH (url is mandatory for replication, doi after acceptance)
+# You can get a DOI for your code from Zenodo, or an SWH identifier from
+# Software Heritage.
+#   see https://guides.github.com/activities/citable-code/
 code:
   - url: https://github.com/AIscend-Research/protein-repro
   - doi: 10.5281/zenodo.21889868
+  - swh:
 
-# Data (remove or leave empty if you don't have a separate dataset DOI)
-data: []
+# Data URL and DOI (optional if no data)
+data:
+  - url: https://www.rcsb.org
+  - doi:
 
-# Original paper being reproduced
+# Information about the original article that has been replicated
 replication:
-  - cite: "Dauparas, J., Anishchenko, I., Bennett, N., Bai, H., Ragotte, R. J., Milles, L. F., Wicky, B. I. M., Courbet, A., de Haas, R. J., Bethel, N., Leung, P. J. Y., Huddy, T. F., Pellock, S., Tischer, D., Chan, F., Koepnick, B., Nguyen, H., Kang, A., Sankaran, B., Bera, A. K., King, N. P., & Baker, D. (2022). Robust deep learning-based protein sequence design using ProteinMPNN. Science, 378(6615), 49-56."
-  - doi: 10.1126/science.add2187
+ - cite: "J. Dauparas, I. Anishchenko, N. Bennett, H. Bai, R. J. Ragotte, L. F. Milles, B. I. M. Wicky, A. Courbet, R. J. de Haas, N. Bethel, P. J. Y. Leung, T. F. Huddy, S. Pellock, D. Tischer, F. Chan, B. Koepnick, H. Nguyen, A. Kang, B. Sankaran, A. K. Bera, N. P. King, and D. Baker. Robust deep learning-based protein sequence design using ProteinMPNN. Science 378, 6615 (2022), pp. 49-56."
+ - bib:  Dauparas:2022
+ - url:  https://www.biorxiv.org/content/10.1101/2022.06.03.494563v1
+ - doi:  10.1126/science.add2187
 
-# Abstract
-abstract: "We reproduce the core computational results of ProteinMPNN, a message-passing neural network for protein sequence design from backbone structure. Using the official code and pretrained weights on 30 curated PDB structures, we recover the paper's qualitative claims: full-backbone design outperforms C-alpha-only design at every sampling temperature (46.4% vs. 41.3% recovery at T=0.1), recovery falls and perplexity rises monotonically with temperature, and recovery is higher at buried than exposed positions. Absolute recovery is below the reported 52.4%, which we attribute to dataset mismatch rather than implementation divergence. Beyond the original paper, we find that the full-backbone and CA-only models cross over under Gaussian coordinate noise near 0.45 Å, so the weaker model on clean structures becomes the more robust one on badly corrupted input; that no such crossover occurs under residue masking; that four of six deliberately constructed malformed inputs fail silently; and that Apple Silicon GPU acceleration cannot run the model at all. Structure-prediction validation with ESMFold shows three of five designs folding to within 1.0 Å of the native backbone at only 32-55% sequence identity. The whole pipeline runs on a laptop CPU in under an hour."
+# Don't forget to surround abstract with double quotes
+abstract: "We reproduce the core computational results of ProteinMPNN, a
+           message-passing neural network for protein sequence design from
+           backbone structure. Using the official code and pretrained weights on
+           30 curated PDB structures, we recover the paper's qualitative claims:
+           full-backbone design outperforms C-alpha-only design at every sampling
+           temperature (46.4% vs. 41.3% recovery at T=0.1), recovery falls and
+           perplexity rises monotonically with temperature, and recovery is
+           higher at buried than exposed positions. Absolute recovery is below
+           the reported 52.4%, which we attribute to dataset mismatch rather than
+           implementation divergence. Beyond the original paper, we find that the
+           full-backbone and CA-only models cross over under Gaussian coordinate
+           noise near 0.45 A, so the weaker model on clean structures becomes the
+           more robust one on badly corrupted input; that no such crossover occurs
+           under residue masking; that four of six deliberately constructed
+           malformed inputs fail silently; and that Apple Silicon GPU acceleration
+           cannot run the model at all. Structure-prediction validation with
+           ESMFold shows three of five designs folding to within 1.0 A of the
+           native backbone at only 32-55% sequence identity. The whole pipeline
+           runs on a laptop CPU in under an hour."
 
-# Article type
+# Bibliography file (yours)
+bibliography: bibliography.bib
+
+# Type of the article
+# Type can be:
+#  * Editorial
+#  * Letter
+#  * Replication
 type: Replication
 
-# Domain
+# Scientific domain of the article (e.g. Computational Neuroscience)
+#  (one domain only & try to be not overly specific)
 domain: Computational Biology
 
-# Language
+# Coding language (main one only if several)
 language: Python
 
 
