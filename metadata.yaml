@@ -76,8 +76,7 @@ abstract: "We reproduce the core computational results of ProteinMPNN, a
            malformed inputs fail silently; and that Apple Silicon GPU acceleration
            cannot run the model at all. Structure-prediction validation with
            ESMFold shows three of five designs folding to within 1.0 Å of the
-           native backbone at only 32-55% sequence identity. The whole pipeline
-           runs on a laptop CPU in under an hour."
+           native backbone at only 32-55% sequence identity."
 
 # Bibliography file (yours)
 bibliography: bibliography.bib
