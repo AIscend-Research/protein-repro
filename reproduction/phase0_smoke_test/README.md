@@ -1,6 +1,6 @@
 # Phase 0 Smoke Test
 
-Reproduces `examples/submit_example_1.sh` (simple monomer design) to verify the
+Reproduces the upstream `examples/submit_example_1.sh` (simple monomer design) to verify the
 official installation, pretrained weights, and inference pipeline work end to end.
 
 ## Environment

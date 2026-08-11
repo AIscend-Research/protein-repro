@@ -1,6 +1,6 @@
 #!/bin/bash
 # End-to-end reproduction driver: Phase 0 (smoke test) through Phase 3
-# (extensions) plus the paper table dump, in dependency order, from a clean
+# (extensions), in dependency order, from a clean
 # checkout. Every step shells out to the same scripts documented in the
 # per-phase READMEs — this file adds ordering, not new behaviour.
 #
@@ -20,7 +20,7 @@ cd "$REPO_ROOT"
 # Prefer the pinned conda env; fall back to whatever python is active so the
 # script still runs in a venv/CI shell without conda on PATH.
 PYBIN=$(conda run -n proteinmpnn which python 2>/dev/null || command -v python3)
-PHASES="${*:-0 1 2 3 tables}"
+PHASES="${*:-0 1 2 3}"
 
 echo "repo:   $REPO_ROOT"
 echo "commit: $(git rev-parse HEAD)"
@@ -110,12 +110,6 @@ if has_phase 3; then
 
   banner "PHASE 3f — visualizations"
   $PYBIN reproduction/phase3_extensions/visualizations/recovery_heatmap.py
-fi
-
-# --- Paper tables ------------------------------------------------------------
-if has_phase tables; then
-  banner "TABLES — regenerate every paper table from the result CSVs"
-  $PYBIN reproduction/make_paper_tables.py
 fi
 
 banner "ALL_DONE"

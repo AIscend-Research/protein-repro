@@ -54,7 +54,7 @@ run_case () {  # name, jsonl, out_folder, extra args...
 # Output folder names match the directories already committed from the original
 # run, so a re-run lands on top of the same paths.
 run_case fullbackbone_3PGK "$OUT/3PGK_parsed.jsonl" "$OUT/fullbackbone_3PGK_seqs"
-run_case ca_only_3PGK      "$OUT/3PGK_parsed.jsonl" "$OUT/ca_only" --ca_only
+run_case ca_only_3PGK      "$OUT/3PGK_parsed.jsonl" "$OUT/ca_only_3PGK_seqs" --ca_only
 run_case fullbackbone_1TUP "$OUT/1TUP_parsed.jsonl" "$OUT/fullbackbone_1TUP_seqs"
 
-echo "ALL_DONE — parse with reproduction/make_paper_tables.py"
+echo "ALL_DONE — peak memory figures are in the *.log files above"

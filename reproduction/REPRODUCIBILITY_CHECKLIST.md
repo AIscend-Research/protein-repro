@@ -78,8 +78,8 @@ Every phase is driven by a committed script; `reproduction/run_all.sh` runs them
 in dependency order from a clean checkout (~30-45 min, CPU):
 
 ```
-bash reproduction/run_all.sh              # phases 0-3 + paper tables
-bash reproduction/run_all.sh 2 3 tables   # only the named phases
+bash reproduction/run_all.sh        # all phases
+bash reproduction/run_all.sh 2 3    # only the named phases
 ```
 
 Per-phase entry points, if run individually:
@@ -97,12 +97,18 @@ Per-phase entry points, if run individually:
 | Phase 3 failure cases | `phase3_extensions/failure_cases/run_failure_cases.sh` → `analyze_failure_cases.py` |
 | Phase 3 visualization | `phase3_extensions/visualizations/recovery_heatmap.py` |
 | ESMFold validation | `phase3_extensions/kaggle_esmfold/esmfold_validation.ipynb` (GPU/Kaggle, not in `run_all.sh`) |
-| Paper tables | `reproduction/make_paper_tables.py` → `reproduction/paper_tables.md` |
 
-`make_paper_tables.py` regenerates every table in the write-up directly from the
-result CSVs, so no number in the paper is transcribed by hand; each table names
-its source CSV. Run logs (`reproduction/**/*.log`) are kept in version control —
-the runtime and memory tables are parsed out of them.
+Each analysis script writes a `summary.csv` next to its results, and those CSVs
+are the authoritative source for every reported number. Run logs
+(`reproduction/**/*.log`) are kept in version control — the runtime and memory
+figures are parsed out of them.
+
+This checkout keeps only what the reproduction needs: the two model weight sets,
+`helper_scripts/` (official parsing), `inputs/` (the 30-structure dataset plus
+the Phase 0 example monomers), the three core `protein_mpnn_*.py` files, and
+`reproduction/`. The upstream `training/`, `examples/`, `colab_notebooks/` and
+`outputs/` directories were removed; they are available in the official
+repository at commit `8907e6671bfbfc92303b5f79c4b5e6ce47cdef57`.
 
 ## Known limitations
 - Small (30-structure, 28-unique-sequence) hand-curated test set, not the

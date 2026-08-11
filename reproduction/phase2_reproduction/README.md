@@ -78,7 +78,7 @@ isn't confounded by a different noise level. Git commit
 3. Absolute recovery (~40-46%) is lower than the paper's headline ~52% on its
    large-scale CATH test set — expected, since our 30-protein set is small,
    hand-curated from RCSB (not the paper's held-out CATH-clustered test split,
-   which isn't separately downloadable — see `training/README.md`, the full
+   which isn't separately downloadable — per the upstream `training/` docs, the full
    16.5 GB training tarball is the only source of `test_clusters.txt`), and
    includes some short/simple domains (e.g. 1CRN, 46 residues) that skew
    differently than the paper's length distribution.
