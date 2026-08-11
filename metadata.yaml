@@ -70,12 +70,12 @@ abstract: "We reproduce the core computational results of ProteinMPNN, a
            the reported 52.4%, which we attribute to dataset mismatch rather than
            implementation divergence. Beyond the original paper, we find that the
            full-backbone and CA-only models cross over under Gaussian coordinate
-           noise near 0.45 A, so the weaker model on clean structures becomes the
+           noise near 0.45 Å, so the weaker model on clean structures becomes the
            more robust one on badly corrupted input; that no such crossover occurs
            under residue masking; that four of six deliberately constructed
            malformed inputs fail silently; and that Apple Silicon GPU acceleration
            cannot run the model at all. Structure-prediction validation with
-           ESMFold shows three of five designs folding to within 1.0 A of the
+           ESMFold shows three of five designs folding to within 1.0 Å of the
            native backbone at only 32-55% sequence identity. The whole pipeline
            runs on a laptop CPU in under an hour."
 
