@@ -16,10 +16,15 @@ authors:
     email:
     affiliations: 1
 
+  - name: Ryan Ahn
+    orcid: 0009-0004-5251-6583
+    email:
+    affiliations: 2
+
   - name: Wenhao Lu
     orcid: 0009-0001-6517-8745
     email: wenhao@nxthorizon.org
-    affiliations: 2,*      # * is for contact author
+    affiliations: 3,*      # * is for contact author
 
 # List of affiliations with code (corresponding to author affiliations), name
 # and address. You can also use these affiliations to add text such as "Equal
@@ -30,6 +35,10 @@ affiliations:
     address: Brentwood, CA, USA
 
   - code:    2
+    name:    Yongsan International School
+    address: Seoul, Korea
+
+  - code:    3
     name:    Millburn High School
     address: Millburn, NJ, USA
 
