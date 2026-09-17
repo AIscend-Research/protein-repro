@@ -15,6 +15,10 @@ own README; this is the single-page summary.
   usable with this codebase as-is (see `phase3_extensions/low_resource/`)
 - numpy 2.2.6, scipy 1.15.3, pandas 2.3.3, biopython 1.87, tqdm 4.68.1,
   matplotlib 3.10.9, scikit-learn 1.7.2, torchvision 0.27.0, torchaudio 2.11.0
+- mdtraj 1.10.3 (added on re-verification, `pip install mdtraj`) — used only
+  for real per-residue SASA in `phase3_extensions/generalization/
+  buried_exposed_analysis.py`; replaces an earlier CA-CA contact-number
+  proxy now that `mkdssp` itself is confirmed unavailable for osx-arm64
 - Repo git commit: `8907e6671bfbfc92303b5f79c4b5e6ce47cdef57` (unchanged
   throughout the entire reproduction — confirmed via `git rev-parse HEAD`
   before every phase)
@@ -63,15 +67,19 @@ clean/stress-test subset) in `reproduction/phase1_data_prep/dataset_summary.csv`
 | Full-backbone recovery (T=0.1, 30 proteins) | 46.4% |
 | CA-only recovery (T=0.1, 30 proteins) | 41.3% |
 | Recovery vs. temperature | monotonic decrease, both models |
-| Recovery vs. Gaussian backbone noise (0 → 0.5 Å) | 46.5% → 23.9% (full-backbone), 40.5% → 25.4% (CA-only); **CA-only more noise-robust past ~0.4 Å** |
+| Recovery vs. Gaussian backbone noise (0 → 0.5 Å) | 46.5% → 23.9% (full-backbone), 40.5% → 25.4% (CA-only); crossover between 0.45-0.5 Å confirmed seed-stable across 3 seeds, but only holds at matched training noise (CA-only v_48_020) — see Phase 3 §1a |
 | Recovery vs. synthetic residue masking (0 → 30%) | see Phase 3 masking results |
-| Buried vs. exposed residue recovery | 42.2% vs. 33.3% (full-backbone) |
-| Failure rate (30/30 structures, both models) | 0% |
+| Buried vs. exposed residue recovery | 47.1% vs. 25.7% (full-backbone, real SASA via mdtraj) |
+| Failure rate (30/30 structures, both models) | 0% (1TUP only succeeds because its DNA chains are manually excluded from design via `assign_fixed_chains.py`; not a claim the parser rejects bad input on its own — see Phase 3 §3c) |
+| Architecture gap significance (paired, T=0.1) | full-backbone favored on 23/30 structures, sign-test p=0.0052 |
+| Dedup headline recovery (28 unique seqs) | 45.7% (full-backbone) / 40.9% (ca_only), vs. 46.4%/41.3% on all 30 |
+| Length-reweighted recovery (medium-length bucket only) | 49.0% (full-backbone), +2.6 pp toward published 52.4% |
 | Peak memory (largest structure, 1TUP) | 862 MB RSS |
 | Peak memory (synthetic 3386-residue stress test) | 2.03 GB footprint, completes in 24.5s, no failure |
 | batch_size 1 vs. 8 (num_seq=8, 3PGK) | 641 MB vs. 2258 MB peak RSS (~3.5×) for ~28% speedup |
 | CPU-only runtime | ~150-165 sequences/min (Apple M3, 8 cores) |
 | ESMFold validation (5 designs, via Kaggle) | 3/5 fold with high confidence & low RMSD (≤1.0 Å) to native despite 22-59% sequence recovery |
+| ESMFold scrambled-sequence control (5 designs, local CPU) | scrambled pLDDT 41-64 / RMSD 11.5-17.0 Å vs. designed pLDDT 70-93 / RMSD 0.6-8.1 Å — confirms high confidence isn't just ESMFold's prior over a familiar fold |
 
 ## Known limitations
 - Small (30-structure, 28-unique-sequence) hand-curated test set, not the

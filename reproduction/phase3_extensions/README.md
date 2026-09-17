@@ -30,6 +30,63 @@ CA-only's sparser representation). CA-only becomes the *more robust* choice
 under sufficiently degraded input, even though it's the weaker model
 on clean structures.
 
+**Is this a real crossover, or just both models collapsing?** The single
+0.5 Å point is a 1.5 pp gap on one seed (23.9% vs. 25.4%), against ~5-6 pp
+gaps everywhere else in the sweep — not enough on its own to trust. Two
+checks, both in `robustness_addenda/`:
+- *Composition entropy* (`noise_sweep_entropy.md`): normalized AA-composition
+  Shannon entropy drops from 0.846→0.734 for full-backbone between 0.0 and
+  0.5 Å (a 0.112 fall) vs. 0.833→0.758 for CA-only (a 0.075 fall) — the
+  full-backbone model's output composition degrades *more*, consistent with
+  a genuine differential robustness effect rather than both models
+  collapsing to the same degree.
+- *Seed stability* (`robustness_addenda/run_seed_sweep.sh`, analysis in
+  `robustness_addenda/analyze_addenda_sweeps.py` →
+  `seed_sweep_crossover.md`/`.csv`): re-runs 0.4/0.45/0.5/0.6 Å across 3
+  seeds each (37, 38, 39) for both models at the matched v_48_020 checkpoint:
+
+  | noise (Å) | full-backbone (range over 3 seeds) | CA-only (range over 3 seeds) | winner |
+  |---|---|---|---|
+  | 0.4 | 32.3% (32.2-32.5%) | 30.4% (30.2-30.6%) | full-backbone |
+  | 0.45 | 28.3% (28.3-28.4%) | 27.9% (27.8-28.2%) | full-backbone |
+  | 0.5 | 24.3% (23.9-24.7%) | 25.3% (25.1-25.4%) | CA-only |
+  | 0.6 | 17.8% (17.7-18.0%) | 20.6% (20.3-21.0%) | CA-only |
+
+  The per-seed ranges barely overlap at any of the four noise levels, and
+  the sign flips consistently between 0.45 and 0.5 Å across all three
+  seeds — **the crossover is not a single-seed fluke; it reproducibly sits
+  between 0.45 and 0.5 Å.**
+
+- *Training-noise dependence* (`robustness_addenda/run_checkpoint_sweep.sh`,
+  → `checkpoint_sweep_table.md`/`.csv`): re-runs CA-only at its two other
+  released checkpoints, `v_48_002` and `v_48_010` (trained with 0.02 Å and
+  0.10 Å coordinate noise respectively, vs. 0.20 Å for the matched
+  `v_48_020`). (Note: `ca_model_weights/` only ships `v_48_002`, `v_48_010`,
+  `v_48_020` — there is no CA-only `v_48_030`; that checkpoint exists only
+  in `vanilla_model_weights/`, so `v_48_010` is the correct substitute for
+  the "other CA-only training-noise checkpoint" comparison.) Across the same
+  noise range:
+
+  | noise (Å) | CA-only v_48_020 (0.20 Å train noise) | CA-only v_48_002 (0.02 Å) | CA-only v_48_010 (0.10 Å) |
+  |---|---|---|---|
+  | 0.0 | 40.5% | 42.9% | 42.5% |
+  | 0.2 | 38.0% | 25.0% | 36.4% |
+  | 0.3 | 35.1% | 19.0% | 29.2% |
+  | 0.4 | — | 15.7% | 23.5% |
+  | 0.5 | 25.4% | 13.7% | 19.8% |
+
+  This changes the interpretation: CA-only's apparent noise-robustness
+  advantage past ~0.45 Å is **not an inherent property of the CA-only
+  architecture** — it only shows up in `v_48_020`, the checkpoint whose
+  *training* noise (0.20 Å) happens to match the high end of the test-noise
+  range. `v_48_002` and `v_48_010`, trained with less coordinate noise,
+  both degrade faster than even the matched full-backbone model and never
+  overtake it in this range. The correct statement of the finding is
+  therefore: **at matched training noise (0.20 Å for both), CA-only becomes
+  more robust than full-backbone past ~0.45-0.5 Å of test-time coordinate
+  noise** — a real, seed-stable effect, but contingent on training/test
+  noise alignment rather than a general CA-only vs. full-backbone property.
+
 ### 1b. Synthetic residue masking
 `masking/make_masked_jsonl.py` masks a contiguous internal stretch (10%,
 20%, 30%) of each of the 21 Phase-1 "clean" proteins, using the exact `-` /
@@ -163,23 +220,29 @@ here rather than overclaimed.
 | multimer (n=3) | 38.9% | 35.9% |
 
 ### 3b. Buried vs. exposed residues
-DSSP (`mkdssp`) is not resolvable via conda (salilab/bioconda have no
-osx-arm64 build) or Homebrew on this machine, so true solvent accessibility
-isn't available. Substituted a standard geometric proxy instead — CA-CA
-contact number (neighbors within 10 Å, excluding |i-j|<3 trivial backbone
-adjacency) — documented explicitly as a substitution, not silently
-presented as DSSP output. Computed for 5 representative monomers
-(`generalization/buried_exposed_analysis.py`), tertile split per protein:
+`mkdssp` itself is not resolvable via conda (salilab/bioconda have no
+osx-arm64 build) or Homebrew on this machine. Originally substituted a
+CA-CA contact-number geometric proxy for this reason; **re-verified using
+real per-residue solvent-accessible surface area** instead
+(`mdtraj.shrake_rupley`, the Shrake-Rupley rolling-probe algorithm DSSP
+itself uses internally for accessibility — a self-contained Python/C
+implementation with no external DSSP binary dependency), which removes the
+proxy caveat entirely. Computed for the same 5 representative monomers
+(`generalization/buried_exposed_analysis.py`), tertile split per protein by
+SASA (buried = lowest-SASA third, exposed = highest-SASA third):
 
 | burial class | full-backbone recovery | CA-only recovery |
 |---|---|---|
-| buried (top third) | 42.2% | 39.9% |
-| exposed (bottom third) | 33.3% | 30.9% |
+| buried (lowest-SASA third) | 47.1% | 45.1% |
+| exposed (highest-SASA third) | 25.7% | 25.7% |
 
 Buried/core positions recover substantially better than exposed/surface
 ones for both models — consistent with the well-known biophysical
 expectation that core packing constrains sequence identity more tightly
-than solvent-exposed positions, which tolerate more substitutions.
+than solvent-exposed positions, which tolerate more substitutions. The gap
+is larger with real SASA (~20-21 pp) than it was with the contact-number
+proxy (~9-11 pp), so the original proxy, if anything, *understated* this
+effect.
 
 ### 3c. Deliberate failure cases
 `failure_cases/` — constructed edge-case PDBs and tested them through the
@@ -267,6 +330,34 @@ QCP superposition logged a "Newton-Rhapson did not converge" warning, and
 the resulting 8.08 Å RMSD likely reflects ESMFold's own uncertainty on this
 fold rather than a genuine design failure.
 
+**Scrambled-sequence control (reviewer-requested, completed locally on CPU):**
+a reviewer flagged that 3 of these 5 proteins (ubiquitin, protein G B1,
+engrailed homeodomain) are extremely well-represented textbook folds, so
+ESMFold's high confidence on the *designed* sequence could just reflect its
+prior over these well-known folds rather than anything specific to the
+ProteinMPNN design. To test this, `scrambled_control/run_scrambled_control.py`
+generates a composition- and length-matched random shuffle of each designed
+sequence (seed 37), folds it with the same local ESMFold model on CPU, and
+compares to the native-fold PDB already produced in `kaggle_esmfold/results/`:
+
+| protein | scrambled pLDDT | designed pLDDT (reported) | CA RMSD to native, scrambled (Å) | CA RMSD to native, designed (Å, reported) |
+|---|---|---|---|---|
+| 1UBQ | 47.3 | 92.8 | 16.97 | 0.79 |
+| 1VII | 57.8 | 69.9 | 11.85 | 2.59 |
+| 2GB1 | 41.4 | 83.1 | 12.41 | 1.00 |
+| 1CRN | 42.8 | 88.7 | 11.52 | 8.08 |
+| 1ENH | 64.2 | 88.8 | 14.71 | 0.64 |
+
+Every scrambled sequence drops into low-confidence territory (pLDDT 41-64,
+vs. 70-93 for the designed sequences) and fails to recover the native
+backbone (CA RMSD 11.5-17.0 Å, i.e. essentially uncorrelated, vs. 0.6-8.1 Å
+for the designed sequences — even 1CRN's confounded 8.08 Å case is still
+~1.4 Å closer than any scrambled result). This addresses the reviewer's
+concern directly: ESMFold is not simply recognizing a familiar fold from
+composition alone — the *specific ordering* ProteinMPNN chose is what
+carries the fold information, and scrambling that ordering destroys it.
+Full numbers in `scrambled_control/scrambled_control_results.csv`.
+
 ## Files
 ```
 noise_sweep/       - Gaussian backbone noise robustness sweep + analysis
@@ -276,6 +367,8 @@ generalization/     - length/multimer/buried-exposed analysis
 failure_cases/      - 6 deliberately constructed edge-case inputs
 visualizations/     - recovery heatmap
 kaggle_esmfold/     - ESMFold validation notebook + completed results (Kaggle, P100->CPU fallback)
+scrambled_control/  - ESMFold scrambled-sequence control, run locally on CPU
+robustness_addenda/ - seed-stability + cross-checkpoint follow-up to the noise-sweep crossover
 ```
 Plus `protein_mpnn_run_mps_patch.py` at the repo root (MPS device patch,
 demonstration only, not part of the official codebase).

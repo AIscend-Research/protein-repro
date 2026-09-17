@@ -72,7 +72,12 @@ isn't confounded by a different noise level. Git commit
 **Qualitative findings reproduced:**
 1. Full-backbone recovery > CA-only recovery at every temperature (+5.1 pp at
    T=0.1), consistent with the paper's claim that full backbone context
-   (N, CA, C, O) improves design accuracy over CA-only.
+   (N, CA, C, O) improves design accuracy over CA-only. This is not just a
+   mean-of-means artifact: paired per-structure recovery (full-backbone minus
+   CA-only, matched by PDB ID) favors full-backbone on 23/30 structures at
+   T=0.1 (7 favor CA-only, 0 ties), median gap +3.7 pp, exact sign-test
+   p=0.0052 — see `../phase3_extensions/robustness_addenda/phase2_paired_diffs.md`
+   (all-temperatures version in the same folder).
 2. Recovery decreases and perplexity increases monotonically with temperature
    for both models — the expected diversity/accuracy tradeoff.
 3. Absolute recovery (~40-46%) is lower than the paper's headline ~52% on its
@@ -81,7 +86,20 @@ isn't confounded by a different noise level. Git commit
    which isn't separately downloadable — see `training/README.md`, the full
    16.5 GB training tarball is the only source of `test_clusters.txt`), and
    includes some short/simple domains (e.g. 1CRN, 46 residues) that skew
-   differently than the paper's length distribution.
+   differently than the paper's length distribution. Two partial checks on
+   this hypothesis (`../phase3_extensions/robustness_addenda/`):
+   - **Duplicate identities**: 1HEL is sequence-identical to 1AKI and 1UBQ to
+     1UBI, so the "30-structure" mean double-counts two proteins. Dropping the
+     duplicates (`dedup_headline_recovery.md`) moves full-backbone recovery
+     from 46.4% to 45.7% and CA-only from 41.3% to 40.9% — a small additional
+     drag on the headline number, not a source of the gap.
+   - **Length-distribution skew**: recovery restricted to the medium-length
+     (70-150 aa) bucket, the closest available proxy to typical CATH-domain
+     sizes, is 49.0% (full-backbone) vs. 46.4% overall — a +2.6 pp shift
+     toward the published 52.4%, i.e. length skew plausibly accounts for
+     roughly 2-3 of the 6 recovery points, leaving the rest attributable to
+     genuine train/test composition or fold-distribution mismatch that this
+     dataset can't further disentangle (`length_reweighted_gap.md`).
 
 **Input completeness (clean vs. stress-test subset) — added on re-verification,
 was missing from the first pass.** `completeness_comparison.py` joins

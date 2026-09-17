@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-cd /Users/christopherhuang/Documents/GitHub/ProteinMPNN
+cd /Users/christopherhuang/Documents/GitHub/mlrc-ProteinMPNN
 PYBIN=$(conda run -n proteinmpnn which python)
 FRACS="10 20 30"
 

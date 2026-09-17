@@ -1,0 +1,18 @@
+>1VII, score=2.6527, global_score=2.6527, fixed_chains=[], designed_chains=['A'], model_name=v_48_020, git_hash=ad50b24b9934ef851a831606ac37e767852ef3c2, seed=39
+MLSDEDFKAVFGMTRSAFANLPLWKQQNLKKEKGLF
+>T=0.1, sample=1, score=1.6680, global_score=1.6680, seq_recovery=0.1667
+KPTEEEYKKLIGEGLEKLKEATEEEIKKLLEEKVKK
+>T=0.1, sample=2, score=1.7323, global_score=1.7323, seq_recovery=0.2222
+LPTEEAYKGAVGITLEELKKLTPEEFKKLYEEKLKK
+>T=0.1, sample=3, score=1.4346, global_score=1.4346, seq_recovery=0.1944
+KPTEEEAKKLIGKTVEELKKIPEEELKELIEKKLKE
+>T=0.1, sample=4, score=1.6728, global_score=1.6728, seq_recovery=0.1944
+PLTPEEAAALLAPGLAEAAALTPEELAALLPRLGAG
+>T=0.1, sample=5, score=1.9530, global_score=1.9530, seq_recovery=0.1389
+LPSEEQVREAAGPTLEELLKGGEEGLKKLAEGGLKE
+>T=0.1, sample=6, score=1.8141, global_score=1.8141, seq_recovery=0.2222
+KIPEEELKKLIGKSLEELFKLPEEGKKELLKKKLEK
+>T=0.1, sample=7, score=1.5193, global_score=1.5193, seq_recovery=0.1944
+EPTEEKLKEGIGKKLEELKKLGEEEVKKLLEEKLKE
+>T=0.1, sample=8, score=1.6205, global_score=1.6205, seq_recovery=0.1944
+EPTEEEAKKAVGKSLEELKELGEEELEKIYKEKLKE
