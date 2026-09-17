@@ -81,6 +81,43 @@ clean/stress-test subset) in `reproduction/phase1_data_prep/dataset_summary.csv`
 | ESMFold validation (5 designs, via Kaggle) | 3/5 fold with high confidence & low RMSD (≤1.0 Å) to native despite 22-59% sequence recovery |
 | ESMFold scrambled-sequence control (5 designs, local CPU) | scrambled pLDDT 41-64 / RMSD 11.5-17.0 Å vs. designed pLDDT 70-93 / RMSD 0.6-8.1 Å — confirms high confidence isn't just ESMFold's prior over a familiar fold |
 
+## Reproducing from scratch
+Every phase is driven by a committed script; `reproduction/run_all.sh` runs them
+in dependency order from a clean checkout (~30-45 min, CPU):
+
+```
+bash reproduction/run_all.sh        # all phases
+bash reproduction/run_all.sh 2 3    # only the named phases
+```
+
+Per-phase entry points, if run individually:
+
+| step | script |
+|---|---|
+| Phase 0 smoke test | commands in `phase0_smoke_test/README.md` |
+| Phase 1 data prep | `phase1_data_prep/analyze_pdbs.py`, `build_summary.py`, `verify_formatting.py` |
+| Phase 2 inference | commands in `phase2_reproduction/README.md`, then `compute_metrics.py`, `completeness_comparison.py`, `make_plots.py` |
+| Phase 2 memory | `phase2_reproduction/memory_check/run_memory_check.sh` |
+| Phase 3 noise | `phase3_extensions/noise_sweep/run_sweep.sh` → `analyze_noise_sweep.py` |
+| Phase 3 masking | `phase3_extensions/masking/make_masked_jsonl.py` → `run_masking.sh` → `analyze_masking.py` |
+| Phase 3 low-resource | `phase3_extensions/low_resource/run_low_resource.sh` → `analyze_low_resource.py` |
+| Phase 3 generalization | `phase3_extensions/generalization/{length_multimer,buried_exposed}_analysis.py` |
+| Phase 3 failure cases | `phase3_extensions/failure_cases/run_failure_cases.sh` → `analyze_failure_cases.py` |
+| Phase 3 visualization | `phase3_extensions/visualizations/recovery_heatmap.py` |
+| ESMFold validation | `phase3_extensions/kaggle_esmfold/esmfold_validation.ipynb` (GPU/Kaggle, not in `run_all.sh`) |
+
+Each analysis script writes a `summary.csv` next to its results, and those CSVs
+are the authoritative source for every reported number. Run logs
+(`reproduction/**/*.log`) are kept in version control — the runtime and memory
+figures are parsed out of them.
+
+This checkout keeps only what the reproduction needs: the two model weight sets,
+`helper_scripts/` (official parsing), `inputs/` (the 30-structure dataset plus
+the Phase 0 example monomers), the three core `protein_mpnn_*.py` files, and
+`reproduction/`. The upstream `training/`, `examples/`, `colab_notebooks/` and
+`outputs/` directories were removed; they are available in the official
+repository at commit `8907e6671bfbfc92303b5f79c4b5e6ce47cdef57`.
+
 ## Known limitations
 - Small (30-structure, 28-unique-sequence) hand-curated test set, not the
   paper's held-out CATH-clustered test split (not separately downloadable —

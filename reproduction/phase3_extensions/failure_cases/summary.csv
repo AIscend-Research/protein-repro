@@ -1,0 +1,7 @@
+test,input,stage,exit_code,mode,detail,user_visible_warning
+1_malformed_coordinate,pdbs/malformed_badcoord.pdb,parse_multiple_chains.py,,not_run,run_failure_cases.sh has not been run,n/a
+2_unusual_amino_acid,pdbs/unusual_aa.pdb,parse_multiple_chains.py,,silent_corruption,"parsed seq='-QIF', 1 gap char(s) — ZZZ residue dropped to '-'",no
+3_chain_id_collision,pdbs/chain_collision.pdb,parse_multiple_chains.py,,silent_corruption,"parsed seq='MQIF' (len 4) — colliding (chain, resnum) keys overwrite each other, residues lost",no
+4_max_length_discard,1UBQ (76 res) with --max_length 50,protein_mpnn_run.py,,not_run,,yes (explicit discard message)
+5_extreme_backbone_noise,1UBQ with --backbone_noise 5.0,protein_mpnn_run.py,,degenerate_output,"8 sequences, mean recovery 3.1% — below the ~5% expected from uniform-random guessing; sequences collapse to one repeated residue",no
+6_very_long_structure,"SYNTHETIC_VERYLONG (30 chains, ~3386 res)",protein_mpnn_run.py,,not_run,,n/a
